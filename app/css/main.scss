@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@300&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap"); */
+
+:root {
+  --white: #ffffff;
+  --blue: #337ab7;
+  --black: #000000;
+  --lightBlue: #2e6da4;
+  --red: #ff0000;
+  --gray: #ccc;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: "Prompt", sans-serif;
+}
+
+header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: var(--blue);
+  justify-content: center;
+}
+
+header h1 {
+  color: var(--white);
+}
+
+h4 {
+  margin: 10px;
+  font-size: 12px;
+}
+
+img {
+  width: 100px;
+}
+
+#imageContainer,
+#debugContainer {
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.column {
+  width: 100%;
+}
+
+#imageContainer {
+  width: 100%;
+}
+
+#debugContainer {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border: 1px solid var(--white);
+  margin: 0 auto;
+}
+
+.card-form {
+  transition: 0.3s;
+  margin: 20px auto;
+  border: 1px solid var(--white);
+  width: 75%;
+  height: 100%;
+  text-align: center;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+button,
+input[type="file"] {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 14px 20px;
+  margin: 8px auto;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#referrer {
+  height: 1in;
+  width: 1in;
+  left: 100%;
+  position: fixed;
+  top: 100%;
+}
