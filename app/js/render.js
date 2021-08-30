@@ -29,6 +29,11 @@ export default class Renderer {
   }
 
   fileSelectorOnChange(e) {
+    // clear everything
+    this.removeImage();
+    this.clearCanvas(this.canvas);
+    log("");
+
     // get all selected Files
     let files = e.target.files;
     for (let i = 0; i < files.length; ++i) {
@@ -56,7 +61,8 @@ export default class Renderer {
           // process just one file.
           return;
         default:
-          log(`${STATIC_TEXTS_INVALID_IMG_MSG} ${this.file.name}`);
+          alert(`${STATIC_TEXTS.INVALID_IMG_MSG}: ${this.file.name}`);
+          log(`${STATIC_TEXTS.INVALID_IMG_MSG} ${this.file.name}`);
       }
     }
   }
@@ -110,6 +116,10 @@ export default class Renderer {
 
   clearCanvas(canvas) {
     this.context.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  removeImage() {
+    this.imageContainer.innerHTML = "";
   }
 
   setSessionStorage(scale, x, y) {
