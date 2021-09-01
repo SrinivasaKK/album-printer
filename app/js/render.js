@@ -47,7 +47,7 @@ export default class Renderer {
             // create HTMLImageElement holding image data
             this.img.src = reader.result;
             // console("this.img.src", this.img.src)
-            sessionStorage.setItem(
+            localStorage.setItem(
               STATIC_TEXTS.IMAGE_KEY,
               JSON.stringify({
                 naturalWidth: this.img.naturalWidth,
@@ -111,7 +111,7 @@ export default class Renderer {
       },
     };
 
-    this.setSessionStorage(scale, x, y);
+    this.setlocalStorage(scale, x, y);
   }
 
   clearCanvas(canvas) {
@@ -122,18 +122,18 @@ export default class Renderer {
     this.imageContainer.innerHTML = "";
   }
 
-  setSessionStorage(scale, x, y) {
-    sessionStorage.setItem(
+  setlocalStorage(scale, x, y) {
+    localStorage.setItem(
       STATIC_TEXTS.SESSION_STORAGE_KEY,
       JSON.stringify(this.printDescription)
     );
-    sessionStorage.setItem(
+    localStorage.setItem(
       STATIC_TEXTS.FILE_NAME_KEY,
       JSON.stringify(this.file.name)
     );
-    sessionStorage.setItem(STATIC_TEXTS.SCALE_KEY, scale);
-    sessionStorage.setItem(STATIC_TEXTS.X_COR_KEY, x);
-    sessionStorage.setItem(STATIC_TEXTS.Y_COR_KEY, y);
+    localStorage.setItem(STATIC_TEXTS.SCALE_KEY, scale);
+    localStorage.setItem(STATIC_TEXTS.X_COR_KEY, x);
+    localStorage.setItem(STATIC_TEXTS.Y_COR_KEY, y);
   }
 
   renderImage() {

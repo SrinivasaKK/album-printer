@@ -17,19 +17,17 @@ export default class Events extends Renderer {
     this.draw(this.context.canvas, this.img, this.x, this.y, this.scale);
   }
   importJson() {
-    const imgLoaded = JSON.parse(
-      sessionStorage.getItem(STATIC_TEXTS.IMAGE_KEY)
-    );
+    const imgLoaded = JSON.parse(localStorage.getItem(STATIC_TEXTS.IMAGE_KEY));
 
     if (imgLoaded) {
       this.img.src = imgLoaded.src;
       this.printDescription = JSON.parse(
-        sessionStorage.getItem(STATIC_TEXTS.SESSION_STORAGE_KEY)
+        localStorage.getItem(STATIC_TEXTS.SESSION_STORAGE_KEY)
       );
-      this.file.name = sessionStorage.getItem(STATIC_TEXTS.FILE_NAME_KEY);
-      this.scale = Number(sessionStorage.getItem(STATIC_TEXTS.SCALE_KEY));
-      this.x = Number(sessionStorage.getItem(STATIC_TEXTS.X_COR_KEY));
-      this.y = Number(sessionStorage.getItem(STATIC_TEXTS.Y_COR_KEY));
+      this.file.name = localStorage.getItem(STATIC_TEXTS.FILE_NAME_KEY);
+      this.scale = Number(localStorage.getItem(STATIC_TEXTS.SCALE_KEY));
+      this.x = Number(localStorage.getItem(STATIC_TEXTS.X_COR_KEY));
+      this.y = Number(localStorage.getItem(STATIC_TEXTS.Y_COR_KEY));
 
       this.renderImage();
       log("");
@@ -41,7 +39,7 @@ export default class Events extends Renderer {
   }
 
   save() {
-    sessionStorage.setItem(
+    localStorage.setItem(
       STATIC_TEXTS.SESSION_STORAGE_KEY,
       JSON.stringify(this.printDescription)
     );
